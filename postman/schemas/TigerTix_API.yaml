@@ -1,0 +1,229 @@
+openapi: 3.0.0
+info:
+  version: '1.0'
+  title: 'Tiger Ticks'
+  license:
+    name: MIT
+servers:
+  - url: 'localhost:3000'
+
+paths:
+  /user:
+    get:
+      summary: 'Sample endpoint: Returns list of users'
+      operationId: listUser
+      tags:
+        - user
+      responses:
+        '200':
+          description: 'Sample response: Details about a user by ID'
+          headers:
+            x-next:
+              description: A link to the next page of responses
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+            $ref: '#/components/responses/Error'
+
+  /user/edit/id:
+    get:
+      summary: Returns view to edit user 
+      operationId: Edit
+      tags:
+        - user
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200':
+            description: returns page Successfully
+            content:
+                application/json:
+                    schema:
+                        $ref: '#/components/schemas/User'
+        '400':
+            $ref: '#/components/responses/Error'
+    post:
+        description: updates a user with new information 
+        requestBody:
+            required: true 
+            content:
+                application/json:
+                    schema:
+                        type: object
+                        required:
+                            properties:
+                                username:
+                                    type: string
+                                email:
+                                    type: string
+                                FirstName:
+                                    type: string
+                                LastName:
+                                    type: string
+                                PhoneNumber:
+                                    type: string
+                                CreditCard:
+                                    type: string
+                                AccountType:
+                                    type: string
+        responses:
+            '200':
+                description: 'Successfully edits a user' 
+            '400':
+                $ref: '#/components/responses/Error'
+
+  /user/delete/id:
+    get:
+        summary: 'Sample endpoint: Returns view to delete user
+        operationId: Delete
+        tags:
+            - user
+        parameters:
+            - $ref: '#/components/parameters/id'
+        responses:
+            '200':
+                description: returns page Successfully
+                content:
+                  application/json:
+                      schema:
+            '400':
+                - $ref: '#/components/responses/Error'
+
+    post:
+        description: deletes the specified user 
+        requestBody:
+            required: true 
+            content:
+                application/json:
+                    schema:
+                        type: object
+                        required:
+                        properties:
+                            username:
+                                type: string
+                            email:
+                                type: string
+                            FirstName:
+                                type: string
+                            LastName:
+                                type: string
+                            PhoneNumber:
+                                type: string
+                            CreditCard:
+                                type: string
+                            AccountType:
+                                type: string
+            responses:
+                '200':
+                    description: Successfully edits a user 
+                '400':
+                    $ref: '#/components/responses/Error'
+
+  /user/create:
+    get:
+        summary: 'Sample endpoint: Returns view to delete user
+        operationId: Delete
+        tags:
+            - user
+        parameters:
+            - $ref: '#/components/parameters/id'
+        responses:
+            '200':
+                description: returns page Successfully
+                content:
+                application/json:
+                    schema:
+                    -$ref: '#/components/schemas/User'
+            '400':
+                $ref: '#/components/responses/Error'
+   
+    post:
+        description: deletes the specified user 
+        requestBody:
+            required: true 
+            content:
+                application/json:
+                    schema:
+                        type: object
+                        required:
+                        properties:
+                            username:
+                                type: string
+                            email:
+                                type: string
+                            FirstName:
+                                type: string
+                            LastName:
+                                type: string
+                            PhoneNumber:
+                                type: string
+                            CreditCard:
+                                type: string
+                            AccountType:
+                                type: string
+        responses:
+        '200':
+            description: Successfully edits a user 
+        '400':
+            $ref: '#/components/responses/Error'
+
+  /user/details/{id}: 
+    post:
+        description: get the details of a specific user 
+        requestBody:
+            required: true
+            content:
+                application/json:
+                    schema:
+
+                        
+                    
+
+    
+
+
+components:
+  schemas:
+    User:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        tag:
+          type: string
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+
+    parameters:
+        id:
+          in: query
+          description: ID of the user
+          required: true
+          schema:
+            type: integer
+            format: int32
+
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+security:
+  - BasicAuth: []

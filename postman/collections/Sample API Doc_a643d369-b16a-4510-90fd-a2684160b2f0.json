@@ -1,0 +1,590 @@
+{
+    "info": {
+        "_postman_id": "8a446c68-ee4b-4daf-9ba1-6320de072ee0",
+        "name": "Sample API Doc",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "users",
+            "item": [
+                {
+                    "name": "Sample endpoint: Returns details about a particular user",
+                    "id": "6c1bb679-e56d-4c4f-8714-3093b327c561",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/users?id=27498084",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "users"
+                            ],
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": "27498084",
+                                    "description": "(Required) ID of the user"
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "9a7cd94c-1a9d-42ee-a180-7251c27378ff",
+                            "name": "Sample response: Details about a user by ID",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/users?id=27498084",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "users"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "id",
+                                            "value": "27498084"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "disabled": false,
+                                    "description": "A link to the next page of responses",
+                                    "key": "x-next",
+                                    "value": "Lorem veniam"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n  \"id\": -14759610,\n  \"name\": \"cillum\",\n  \"tag\": \"qui in sunt adipisicing\"\n}"
+                        },
+                        {
+                            "id": "c754b3d7-c084-40bd-a5a3-ef3585debc4e",
+                            "name": "Invalid request",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/users?id=27498084",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "users"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "id",
+                                            "value": "27498084"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n  \"message\": \"laborum ea minim\"\n}"
+                        },
+                        {
+                            "id": "a156b29a-82b0-4f9b-bbfa-28d76bc4cdc0",
+                            "name": "Unexpected error",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/users?id=27498084",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "users"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "id",
+                                            "value": "27498084"
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "Internal Server Error",
+                            "code": 500,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n  \"code\": 33556168,\n  \"message\": \"nisi in voluptate qui dolor\"\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "/users",
+                    "id": "a720413f-8fce-4f46-8a72-b78d3614f0cd",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"username\": \"esse Ut proident in\",\n  \"email\": \"nulla elit esse amet\",\n  \"FirstName\": \"enim in\",\n  \"LastName\": \"nisi proident q\",\n  \"PhoneNumber\": \"elit cupidatat\",\n  \"CreditCard\": \"aliqua\",\n  \"AccountType\": \"commodo sunt\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/users",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "users"
+                            ]
+                        },
+                        "description": "creates a user"
+                    },
+                    "response": [
+                        {
+                            "id": "100996e6-f001-46de-948d-dc12d10df5a1",
+                            "name": "Invalid request",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"username\": \"esse Ut proident in\",\n  \"email\": \"nulla elit esse amet\",\n  \"FirstName\": \"enim in\",\n  \"LastName\": \"nisi proident q\",\n  \"PhoneNumber\": \"elit cupidatat\",\n  \"CreditCard\": \"aliqua\",\n  \"AccountType\": \"commodo sunt\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/users",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "users"
+                                    ]
+                                }
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n  \"message\": \"laborum ea minim\"\n}"
+                        },
+                        {
+                            "id": "89623c9f-fa77-41ae-9d53-e453c385fa56",
+                            "name": "Successfully creates new user",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\n  \"username\": \"esse Ut proident in\",\n  \"email\": \"nulla elit esse amet\",\n  \"FirstName\": \"enim in\",\n  \"LastName\": \"nisi proident q\",\n  \"PhoneNumber\": \"elit cupidatat\",\n  \"CreditCard\": \"aliqua\",\n  \"AccountType\": \"commodo sunt\"\n}",
+                                    "options": {
+                                        "raw": {
+                                            "language": "json"
+                                        }
+                                    }
+                                },
+                                "url": {
+                                    "raw": "{{baseUrl}}/users",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "users"
+                                    ]
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "text",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "text/plain"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": ""
+                        }
+                    ]
+                }
+            ],
+            "id": "b3e4a75c-7938-4ee5-947b-0398943a7122"
+        },
+        {
+            "name": "Events",
+            "item": [
+                {
+                    "name": "/Events",
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "id": "a6af091e-debb-4248-8504-dfd1047ac137",
+                                "exec": [
+                                    ""
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "id": "526fe175-868b-4598-a66b-98c6b1bc02e0",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/Events/:ID?ID&EventType&EventName&EventDescription&EventLocation&EventDateTime",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "Events",
+                                ":ID"
+                            ],
+                            "query": [
+                                {
+                                    "key": "ID",
+                                    "value": null,
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "EventType",
+                                    "value": null,
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "EventName",
+                                    "value": null,
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "EventDescription",
+                                    "value": null,
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "EventLocation",
+                                    "value": null,
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "EventDateTime",
+                                    "value": null,
+                                    "type": "text"
+                                }
+                            ],
+                            "variable": [
+                                {
+                                    "key": "ID",
+                                    "value": null
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "93aecab9-9e76-4502-ac29-47540195b227",
+                            "name": "Invalid Request",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/Events/:ID",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "Events",
+                                        ":ID"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "ID",
+                                            "value": null
+                                        }
+                                    ]
+                                }
+                            },
+                            "_postman_previewlanguage": null,
+                            "header": null,
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": null
+                        }
+                    ]
+                },
+                {
+                    "name": "/Events/Create",
+                    "id": "cde477bc-4eb9-4aa4-8c5b-5ae4bda216da",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "Events/ID?ID",
+                            "host": [
+                                "Events"
+                            ],
+                            "path": [
+                                "ID"
+                            ],
+                            "query": [
+                                {
+                                    "key": "ID",
+                                    "value": null,
+                                    "type": "text"
+                                }
+                            ]
+                        }
+                    },
+                    "response": [
+                        {
+                            "id": "5bfbdac3-fef7-404e-9071-f11ced150164",
+                            "name": "Successfully created a new event",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": {
+                                    "raw": "{{baseUrl}}/Events/:ID?ID&EventType&EventName&EventDescription&EventLocation&EventDateTime",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "Events",
+                                        ":ID"
+                                    ],
+                                    "query": [
+                                        {
+                                            "key": "ID",
+                                            "value": null
+                                        },
+                                        {
+                                            "key": "EventType",
+                                            "value": null
+                                        },
+                                        {
+                                            "key": "EventName",
+                                            "value": null
+                                        },
+                                        {
+                                            "key": "EventDescription",
+                                            "value": null
+                                        },
+                                        {
+                                            "key": "EventLocation",
+                                            "value": null
+                                        },
+                                        {
+                                            "key": "EventDateTime",
+                                            "value": null
+                                        }
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "ID",
+                                            "value": null
+                                        }
+                                    ]
+                                }
+                            },
+                            "_postman_previewlanguage": null,
+                            "header": null,
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\r\n  \"message\": \"Thank you for creating an account\"\r\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "/Events/Request",
+                    "id": "3cea2bb9-1f02-475f-b924-ac1be06a9a1e",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/Events/Request",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "Events",
+                                "Request"
+                            ]
+                        },
+                        "description": "Obtain information about an artist from his or her unique username"
+                    },
+                    "response": [
+                        {
+                            "id": "ded3e660-3fc9-46d7-878d-436e7138dfda",
+                            "name": "Invalid request",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                    }
+                                ],
+                                "url": {
+                                    "raw": "{{baseUrl}}/Events/:EventName",
+                                    "host": [
+                                        "{{baseUrl}}"
+                                    ],
+                                    "path": [
+                                        "Events",
+                                        ":EventName"
+                                    ],
+                                    "variable": [
+                                        {
+                                            "key": "EventName",
+                                            "value": null
+                                        }
+                                    ]
+                                }
+                            },
+                            "status": "Bad Request",
+                            "code": 400,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "cookie": [],
+                            "responseTime": null,
+                            "body": "{\n  \"message\": \"magna do Excepteur irure\"\n}"
+                        }
+                    ]
+                }
+            ],
+            "id": "41cd994b-8121-4767-92c3-5980ca57c5ba"
+        }
+    ],
+    "auth": {
+        "type": "basic",
+        "basic": [
+            {
+                "key": "username",
+                "value": "<Basic Auth Username>",
+                "type": "string"
+            },
+            {
+                "key": "password",
+                "value": "<Basic Auth Password>",
+                "type": "string"
+            }
+        ]
+    },
+    "variable": [
+        {
+            "id": "78c7ecf5-d00c-405b-baa7-86b07088487a",
+            "key": "baseUrl",
+            "value": "localhost:3000",
+            "type": "string"
+        }
+    ]
+}
